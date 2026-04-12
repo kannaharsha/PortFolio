@@ -212,7 +212,6 @@ function AmbientCodeLayer() {
   );
 }
 
-// === Floating ambient orbs for backgrounds ===
 function FloatingOrbs() {
   const orbs = [
     { size: 400, x: "5%", y: "15%", color: "rgba(59,130,246,0.06)", dur: 12 },
@@ -242,7 +241,6 @@ function FloatingOrbs() {
   );
 }
 
-// === Animated section header ===
 function SectionHeader({ title, highlight, subtitle }: { title: string; highlight: string; subtitle?: string }) {
   return (
     <motion.div
@@ -267,7 +265,6 @@ function SectionHeader({ title, highlight, subtitle }: { title: string; highligh
   );
 }
 
-// === Staggered card reveal ===
 function CardReveal({ children, index = 0, className = "" }: { children: React.ReactNode; index?: number; className?: string }) {
   return (
     <motion.div
@@ -452,7 +449,7 @@ function ProfileGraphic() {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="relative flex justify-center lg:justify-end p-4" // Added p-4 for ornament safety
+      className="relative flex justify-center lg:justify-end p-4"
     >
       <div 
         className="relative w-[260px] h-[260px] sm:w-[280px] sm:h-[280px] md:w-[350px] md:h-[350px] group mx-auto lg:mr-0 cursor-pointer"
@@ -460,29 +457,23 @@ function ProfileGraphic() {
         onMouseLeave={() => setIsScanning(false)}
         onClick={() => setIsScanning(!isScanning)}
       >
-        {/* Tech Bracket Overlay Elements */}
-        {/* Using slightly larger offsets and ensuring visibility */}
         <div className={`absolute -top-4 -left-4 w-12 h-12 border-t-[3.5px] border-l-[3.5px] rounded-tl-2xl z-20 pointer-events-none transition-colors duration-500 ${isScanning ? 'border-blue-400' : 'border-blue-500/70'}`} />
         <div className={`absolute -top-4 -right-4 w-12 h-12 border-t-[3.5px] border-r-[3.5px] rounded-tr-2xl z-20 pointer-events-none transition-colors duration-500 ${isScanning ? 'border-blue-400' : 'border-blue-500/70'}`} />
         <div className={`absolute -bottom-4 -left-4 w-12 h-12 border-b-[3.5px] border-l-[3.5px] rounded-bl-2xl z-20 pointer-events-none transition-colors duration-500 ${isScanning ? 'border-blue-400' : 'border-blue-500/70'}`} />
         <div className={`absolute -bottom-4 -right-4 w-12 h-12 border-b-[3.5px] border-r-[3.5px] rounded-br-2xl z-20 pointer-events-none transition-colors duration-500 ${isScanning ? 'border-blue-400' : 'border-blue-500/70'}`} />
 
-        {/* Glassmorphic Frame */}
         <div className={`w-full h-full p-3 rounded-3xl glass-panel border border-white/10 relative z-10 transition-shadow duration-700 ${isScanning ? 'shadow-[0_0_60px_rgba(59,130,246,0.3)]' : 'shadow-[0_0_40px_rgba(59,130,246,0.1)]'}`}>
           <div className="w-full h-full rounded-2xl overflow-hidden relative border border-blue-500/10 bg-[#0B0C10]">
-            {/* The Sci-Fi Scanner */}
             <motion.div 
               animate={isScanning ? { y: ["-30%", "130%"] } : { y: "-100%" }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
               className={`absolute top-0 left-0 w-full h-[60%] bg-gradient-to-b from-transparent via-blue-500/15 to-blue-500/40 border-b-[2.5px] border-blue-400 shadow-[0_15px_40px_rgba(59,130,246,0.5)] z-30 pointer-events-none transition-opacity duration-300 ${isScanning ? 'opacity-100' : 'opacity-0'}`} 
             />
-            {/* The Image */}
             <ImageWithFallback
               src="/profile.jpg"
               alt="Bokkena Harsha Teja"
               className={`w-full h-full object-cover transition-all duration-[1s] relative z-10 ${isScanning ? 'grayscale-0 scale-[1.03]' : 'grayscale-[80%] scale-100'}`}
             />
-            {/* Atmospheric Inner Glow */}
             <div className={`absolute inset-0 transition-colors duration-700 z-20 pointer-events-none ${isScanning ? 'bg-transparent' : 'bg-blue-500/5'}`} />
           </div>
         </div>
@@ -565,14 +556,14 @@ export default function App() {
         : fullText.substring(0, displayText.length + 1)
       );
 
-      setTypingSpeed(isDeleting ? 40 : 80);
+      setTypingSpeed(isDeleting ? 25 : 45);
 
       if (!isDeleting && displayText === fullText) {
-        timer = setTimeout(() => setIsDeleting(true), 1500); 
+        timer = setTimeout(() => setIsDeleting(true), 800);
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-        timer = setTimeout(handleTyping, 200);
+        timer = setTimeout(handleTyping, 150);
       } else {
         timer = setTimeout(handleTyping, typingSpeed);
       }
@@ -598,7 +589,6 @@ export default function App() {
       <AmbientCodeLayer />
       <ParticleBackground />
 
-      {/* Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -621,7 +611,6 @@ export default function App() {
               </span>
             </motion.div>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-1">
               {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
                 <button
@@ -644,7 +633,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white"
@@ -664,7 +652,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
@@ -693,12 +680,10 @@ export default function App() {
         </AnimatePresence>
       </motion.nav>
 
-      {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Content (Text & Icons) */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -771,7 +756,6 @@ export default function App() {
                 </a>
               </motion.div>
 
-              {/* Social Icons (Hero Bottom Left) */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -790,12 +774,10 @@ export default function App() {
               </motion.div>
             </motion.div>
 
-            {/* Right Content (Modular Square Profile) */}
             <ProfileGraphic />
           </div>
         </div>
 
-        {/* Hero Shimmer Line */}
         <div className="absolute bottom-0 left-0 right-0 h-px overflow-hidden pointer-events-none">
           <motion.div
             className="h-full w-1/3 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
@@ -812,14 +794,12 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* About Section */}
       <SectionReveal id="about" className="py-24 relative">
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader title="About" highlight="Me" subtitle="Specialized AI Engineer dedicated to pioneering Agentic AI, NLP, and LLM architecture solutions at scale." />
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left: Bio */}
             <div className="space-y-6">
               <p className="text-blue-100/90 text-base leading-relaxed">
                 I am a results-driven AI & Machine Learning Engineer with hands-on experience building intelligent systems. Currently pursuing my B.Tech in CSE (AIML) at MVGR College of Engineering, my expertise spans Machine Learning, Natural Language Processing, and Agentic AI architectures.
@@ -847,7 +827,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right: Stats Grid */}
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, i) => (
@@ -890,19 +869,16 @@ export default function App() {
         </div>
       </SectionReveal>
 
-      {/* Skills Section */}
       <SectionReveal id="skills" className="py-24 relative bg-blue-500/[0.03]">
         <div className="w-full max-w-[1920px] mx-auto px-4 sm:px-8 xl:px-16 relative z-10">
           <SectionHeader title="Technical" highlight="Arsenal" subtitle="A comprehensive matrix of expertise across the AI and Machine Learning landscape." />
 
-          {/* Skill Badges */}
           <div className="flex flex-wrap justify-center gap-3 mb-14 max-w-4xl mx-auto">
             {techBadges.map((skill, index) => (
               <SkillBadge key={index} skill={skill} index={index} />
             ))}
           </div>
 
-          {/* Category Cards — fixed height, uniform */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, index) => (
               <SkillCategoryCard key={index} category={category} index={index} />
@@ -911,10 +887,8 @@ export default function App() {
         </div>
       </SectionReveal>
 
-      {/* Experience Section */}
       <SectionReveal id="experience" className="py-24 relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Education Timeline (Split View) */}
           <div className="relative mb-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -932,13 +906,11 @@ export default function App() {
             <div className="relative max-w-4xl mx-auto">
               <div className="absolute left-6 md:left-1/2 top-4 md:top-0 bottom-4 w-[2px] bg-blue-900/40 md:-translate-x-1/2 shadow-[0_0_15px_rgba(59,130,246,0.1)]"></div>
               
-              {/* Left Card: B.Tech */}
               <div className="relative flex flex-col md:flex-row md:justify-between items-center mb-16 md:mb-24 w-full pl-16 md:pl-0">
                 <div className="md:hidden absolute left-6 top-6 -translate-x-[7px] w-4 h-4 rounded-full bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.8)] border-4 border-[#0B0C10] z-10"></div>
                 <div className="w-full md:w-[45%] flex md:justify-end justify-start">
                   <div className="glass-panel p-6 md:p-8 rounded-2xl border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.1)] relative w-full group overflow-hidden hover:border-blue-500/60 transition-colors">
                     <div className="hidden md:block absolute top-[40%] -right-[12%] w-[12%] h-[2px] bg-blue-500/30 group-hover:bg-blue-400 transition-colors pointer-events-none"></div>
-                    {/* Scanner Effect - reveal on mobile scroll or desktop hover */}
                     <motion.div 
                       initial={{ y: "-100%" }}
                       whileInView={{ y: "100%" }}
@@ -969,7 +941,6 @@ export default function App() {
                 <div className="hidden md:block w-[45%]"></div>
               </div>
 
-              {/* Right Card: 12th */}
               <div className="relative flex flex-col md:flex-row justify-between items-center w-full pl-16 md:pl-0">
                 <div className="md:hidden absolute left-6 top-6 -translate-x-[7px] w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] border-4 border-[#0B0C10] z-10"></div>
                 <div className="hidden md:block w-[45%]"></div>
@@ -977,7 +948,6 @@ export default function App() {
                 <div className="w-full md:w-[45%] flex justify-start">
                   <div className="glass-panel p-6 md:p-8 rounded-2xl border-blue-500/20 hover:border-blue-500/50 shadow-lg relative w-full group transition-colors overflow-hidden">
                     <div className="hidden md:block absolute top-[40%] -left-[12%] w-[12%] h-[2px] bg-blue-500/20 group-hover:bg-blue-400 transition-colors pointer-events-none"></div>
-                    {/* Scanner Effect */}
                     <motion.div 
                       initial={{ y: "-100%" }}
                       whileInView={{ y: "100%" }}
@@ -1009,10 +979,8 @@ export default function App() {
           </div>
 
           <div className="mt-16 space-y-16">
-            {/* Professional Arsenal Header */}
             <SectionHeader title="Professional" highlight="Arsenal" subtitle="A curated showcase of industry experience, certified credentials, and leadership in tech." />
 
-            {/* Tabbed Professional Arsenal */}
             <div className="space-y-12">
               <div className="flex flex-wrap justify-center gap-4 mb-20">
                 {[
@@ -1050,7 +1018,6 @@ export default function App() {
                           whileHover={{ x: 4, borderColor: "rgba(59,130,246,0.4)" }}
                           className="flex items-center gap-5 p-5 rounded-2xl glass-panel border border-white/5 group transition-all relative overflow-hidden"
                         >
-                          {/* Scanner Effect */}
                           <motion.div 
                             initial={{ x: "-100%" }}
                             whileInView={{ x: "100%" }}
@@ -1058,7 +1025,6 @@ export default function App() {
                             transition={{ duration: 1.2, ease: "linear", delay: 0.2 }}
                             className="absolute inset-y-0 w-32 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent z-10 pointer-events-none opacity-40 ml-[-50px]" 
                           />
-                          {/* Hover shimmer */}
                           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                           <div className="relative flex-shrink-0 w-11 h-11 rounded-xl bg-blue-900/20 border border-blue-800/30 flex items-center justify-center text-blue-400 group-hover:border-blue-500/50 transition-colors">
@@ -1151,7 +1117,6 @@ export default function App() {
         </div>
       </SectionReveal>
 
-      {/* Projects Section */}
       <SectionReveal id="projects" className="py-24 relative bg-blue-500/[0.02]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader title="AI" highlight="Projects" subtitle="A showcase of advanced machine learning models and intelligent software systems." />
@@ -1178,7 +1143,6 @@ export default function App() {
       </SectionReveal>
 
 
-      {/* Contact Section */}
       <section id="contact" className="py-24 relative">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -1190,7 +1154,6 @@ export default function App() {
             <SectionHeader title="Get In" highlight="Touch" subtitle="Have a project in mind or want to collaborate? Let's build something amazing together." />
 
             <div className="flex flex-col lg:flex-row gap-8 items-start">
-              {/* Left: Contact Info */}
               <div className="w-full lg:w-[35%] space-y-4 flex-shrink-0">
                 {[
                   { icon: Mail, label: "Email", value: "harshadeveloper06@gmail.com" },
@@ -1234,7 +1197,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Right: Form */}
               <div className="relative w-full lg:w-[65%]">
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-[1.5px] border-l-[1.5px] border-blue-500/50 rounded-tl pointer-events-none" />
                 <div className="absolute bottom-0 right-0 w-6 h-6 border-b-[1.5px] border-r-[1.5px] border-blue-500/50 rounded-br pointer-events-none" />
@@ -1321,14 +1283,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-10 border-t border-white/5 relative overflow-hidden bg-[#030306]">
-        {/* Subtle grid background */}
         <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         
         <div className="w-full px-6 md:px-12 xl:px-20 relative z-10 max-w-[1920px] mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 mb-8">
-            {/* Brand & Bio */}
             <div className="flex flex-col items-center lg:items-start max-w-sm text-center lg:text-left">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/20">
@@ -1341,7 +1300,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Quick Links */}
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
                 <button 
@@ -1354,7 +1312,6 @@ export default function App() {
               ))}
             </div>
 
-            {/* Socials */}
             <div className="flex gap-3">
               {[
                 { href: "https://github.com/kannaharsha", icon: Github },
@@ -1375,7 +1332,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bottom Bar */}
           <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-xs text-blue-300/70 font-mono tracking-wider">
               © {new Date().getFullYear()} BOKKENA HARSHA TEJA
@@ -1387,7 +1343,6 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Scroll to Top */}
       <AnimatePresence>
         {isScrolled && (
           <motion.button
