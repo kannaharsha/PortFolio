@@ -298,7 +298,7 @@ function SectionReveal({ children, id, className = "" }: { children: React.React
 }
 
 function SkillBadge({ skill, index }: { skill: typeof techBadges[0]; index: number }) {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(index === 0);
 
   return (
     <motion.div
@@ -309,7 +309,7 @@ function SkillBadge({ skill, index }: { skill: typeof techBadges[0]; index: numb
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
       onClick={() => setIsActive(!isActive)}
-      className="flex items-center gap-2 px-4 py-2.5 rounded-xl glass-panel border border-white/5 hover:border-blue-400/50 transition-all cursor-default group relative"
+      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl glass-panel border transition-all cursor-default group relative ${isActive ? 'border-blue-400/50' : 'border-white/5 hover:border-blue-400/50'}`}
     >
       <skill.icon className="text-blue-400" size={16} />
       <span className="font-semibold text-sm text-white">{skill.name}</span>
@@ -322,7 +322,7 @@ function SkillBadge({ skill, index }: { skill: typeof techBadges[0]; index: numb
 }
 
 function SkillCategoryCard({ category, index }: { category: typeof skillCategories[0]; index: number }) {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(index === 0);
 
   return (
     <motion.div
@@ -333,7 +333,7 @@ function SkillCategoryCard({ category, index }: { category: typeof skillCategori
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
       onClick={() => setIsActive(!isActive)}
-      className={`p-5 rounded-2xl glass-panel border border-white/5 transition-all flex flex-col justify-between group cursor-pointer ${isActive ? 'border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.1)]' : 'hover:shadow-[0_0_25px_rgba(59,130,246,0.1)]'}`}
+      className={`p-5 rounded-2xl glass-panel border transition-all flex flex-col justify-between group cursor-pointer ${isActive ? 'border-blue-500/50 shadow-[0_0_25px_rgba(59,130,246,0.1)]' : 'border-white/5 hover:shadow-[0_0_25px_rgba(59,130,246,0.1)]'}`}
     >
       <div>
         <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-3">
@@ -939,7 +939,7 @@ export default function App() {
                         <span className="text-sm font-bold tracking-widest order-2 md:order-1">2023 - 2027</span>
                         <div className="bg-blue-900/40 p-2 rounded-lg border border-blue-800/50 order-1 md:order-2"><GraduationCap size={16} /></div>
                       </div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">B.Tech CSE(AIML)</h4>
+                      <h4 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight">B.Tech in AIML CSE</h4>
                       <p className="text-sm md:text-base text-blue-200/80 mb-6 flex flex-wrap items-center md:justify-end justify-start gap-1.5 leading-snug">
                         MVGR College of Engineering <span className="text-blue-500 font-black text-xs leading-none">•</span> Vizianagaram
                       </p>
