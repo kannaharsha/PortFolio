@@ -126,37 +126,38 @@ const projects = [
 const certifications = [
   { title: "Codebasics Data Science & AI Bootcamp Graduate", org: "Codebasics", file: "/certifications/codebasics/PDF's/Final Certificate.pdf", featured: true, highlight: "BootCamp Certificate" },
   { title: "AWS Academy - Data Engineering", org: "AWS", file: "/certifications/AWS/23331A4207_AWS.pdf", featured: true, highlight: "AWS Certified" },
-  { title: "Gen AI and Agentic AI", org: "Codebasics", file: "/certifications/codebasics/PDF's/Gen AI and Agentic AI.pdf", featured: true, highlight: "Specialized" },
-  { title: "Natural Language Processing", org: "Codebasics", file: "/certifications/codebasics/PDF's/Natural langauge Processing.pdf", featured: true, highlight: "Specialized" },
-  { title: "Deep Learning", org: "Codebasics", file: "/certifications/codebasics/PDF's/Deep learning.pdf", featured: true, highlight: "Specialized" },
-  { title: "Machine Learning", org: "Codebasics", file: "/certifications/codebasics/PDF's/Machine Learning.pdf" },
-  { title: "Math and Statistics", org: "Codebasics", file: "/certifications/codebasics/PDF's/Math and Statistics.pdf" },
   { title: "SQL and Data Science", org: "Codebasics", file: "/certifications/codebasics/PDF's/SQL and Data Science.pdf" },
+  { title: "SQL Basic", org: "HackerRank", file: "/certifications/download.pdf" },
+  { title: "Math and Statistics", org: "Codebasics", file: "/certifications/codebasics/PDF's/Math and Statistics.pdf" },
   { title: "Python (Codebasics)", org: "Codebasics", file: "/certifications/codebasics/PDF's/Python.pdf" },
   { title: "Python Essentials 2", org: "Cisco Networking", file: "/certifications/CISCO/Python Essentials 2.pdf" },
-  { title: "TATA Forage Virtual Simulation", org: "TATA", file: "/certifications/TATA Forage.pdf" },
-  { title: "Python & Django Framework", org: "Udemy", file: "/certifications/Udemy/python and django frame worrk and html5 stack completed course.pdf" },
-  { title: "Python for Deep Learning & Neural Networks", org: "Udemy", file: "/certifications/Udemy/python for deep learning build neural networks in python.pdf" },
-  { title: "Web & DevOps Certificate", org: "Udemy", file: "/certifications/Udemy/wed-devops-certificate.pdf" },
-  { title: "Artificial Intelligence & Machine Learning", org: "Udemy", file: "/certifications/Udemy/AIML.pdf" },
+  { title: "Machine Learning", org: "Codebasics", file: "/certifications/codebasics/PDF's/Machine Learning.pdf" },
+  { title: "Natural Language Processing", org: "Codebasics", file: "/certifications/codebasics/PDF's/Natural langauge Processing.pdf", featured: true, highlight: "Specialized" },
+  { title: "Deep Learning", org: "Codebasics", file: "/certifications/codebasics/PDF's/Deep learning.pdf", featured: true, highlight: "Specialized" },
+  { title: "Python for Deep Learning & Neural Networks", org: "Udemy", file: "/certifications/UDEMY/python for deep learning build neural networks in python.pdf" },
+  { title: "Gen AI and Agentic AI", org: "Codebasics", file: "/certifications/codebasics/PDF's/Gen AI and Agentic AI.pdf", featured: true, highlight: "Specialized" },
   { title: "Quantum Computing", org: "Wiser | Qubitech", file: "/certifications/Quantam Computing.jpg" },
-  { title: "Lean Six Sigma White Belt", org: "Management and Strategy Institute", file: "/certifications/Lean Six Sigma White Belt.pdf" },
-  { title: "SQL Basic", org: "HackerRank", file: "/certifications/SQL Basic.pdf" }
+  { title: "TATA Forage Virtual Simulation", org: "TATA", file: "/certifications/TATA Forage.pdf" },
+  { title: "Python & Django Framework", org: "Udemy", file: "/certifications/UDEMY/python and django frame worrk and html5 stack completed course.pdf" },
+  { title: "Web & DevOps Certificate", org: "Udemy", file: "/certifications/UDEMY/wed-devops-certificate.pdf" },
+  { title: "Artificial Intelligence & Machine Learning", org: "Udemy", file: "/certifications/AIML.pdf" },
+  { title: "Lean Six Sigma White Belt", org: "Management and Strategy Institute", file: "/certifications/Bokkena Harshateja-345427777.pdf" }
+  
 ];
 
 const internships = [
   { title: "AWS Data Engineering Internship", org: "AWS / AICTE", date: "2024", file: "/internships/EDUSKILLS/Smart Internz.pdf" },
   { title: "Java Full Stack Developer Virtual Internship", org: "EduSkills / AICTE", date: "2024", file: "/internships/1STOP/Internship_Certificate - B_Harsha_teja.pdf" },
-  { title: "Research Internship", org: "INTRINZ", date: "2024", file: "/internships/iNTRINZ/internship.pdf" },
+  { title: "Web Development", org: "INTRINZ", date: "2024", file: "/internships/iNTRINZ/internship.pdf" },
   { title: "Machine Learning", org: "1Stop", date:"2025", file: "/internships/1STOP/Internship_Certificate.pdf"}
 ];
 
 const hackathons = [
   { title: "Aadhrita Hack24", role: "Technical Coordinator & Mentor", file: "/hackathons/Aadhrita Hack24 - coordinator Certificate.png" },
   { title: "GenzPluz Hack24", role: "Technical Coordinator", file: "/hackathons/GenzPluz Hack24 - coordinator Certificate.png" },
-  { title: "Google Solution Challenge", role: "Participant & Innovator", file: "/hackathons/Solution Challange.pdf" },
   { title: "Hack With Vizag", role: "Participant", file: "/hackathons/Hack With Vizag.pdf" },
-  { title: "Sankalp Hackathon", role: "Participant & Solutions Architect", file: "/hackathons/Sankalp.pdf" }
+  { title: "Sankalp Hackathon", role: "Participant & Solutions Architect", file: "/hackathons/Sankalp.pdf" },
+  { title: "Google Solution Challenge", role: "Participant & Innovator", file: "/hackathons/Solution Challange.pdf" }
 ];
 
 const stats = [
