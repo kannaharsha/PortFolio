@@ -91,7 +91,7 @@ const projects = [
   {
     title: 'GitHub Repo Analyzer',
     description: 'An interactive Streamlit analytics dashboard that queries the GitHub REST API to analyze repository metrics, stars, forks, open issues, and primary languages.',
-    image: 'https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80',
     tags: ['Python', 'GitHub API', 'Streamlit', 'Data Analytics'],
     link: 'https://github.com/kannaharsha/GithubRepoAnalysis'
   },
