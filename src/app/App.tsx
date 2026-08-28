@@ -813,7 +813,7 @@ export default function App() {
                 transition={{ delay: 0.25 }}
                 className="text-blue-100/90 max-w-lg text-[17px] leading-relaxed font-medium"
               >
-                Engineer specializing in Agentic AI, NLP, and scalable architectures—transforming complex data models into seamless, production-grade applications.
+                AI & ML Engineer focused on designing autonomous agents, scalable NLP pipelines, and production-grade intelligent systems.
               </motion.p>
 
               <motion.div
