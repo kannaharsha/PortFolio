@@ -146,6 +146,8 @@ const certifications = [
   { title: "CCNA: Enterprise Networking, Security, and Automation (CCNA 3)", org: "Cisco Networking", file: "/certifications/CIsco/23331A4207_ccna3_ensa.pdf" },
   { title: "TATA Forage Virtual Simulation", org: "TATA", file: "/certifications/TATA Forage.pdf" },
   { title: "AWS Academy - Cloud Practitioner & AI/ML Learning", org: "AWS", file: "/certifications/AWS AIML/AWS AIML Practitioner Learning.pdf" },
+  { title: "AWS Academy Graduate - AWS Academy Cloud Security Foundations", org: "AWS", file: "/certifications/AWS AIML/Cloud Security Foundations.pdf", featured: true, highlight: "Cloud Security" },
+  { title: "AWS Academy Graduate - AWS Academy Cloud Developing", org: "AWS", file: "/certifications/AWS AIML/Cloud_Developing_Training_Badge_Badge (1).pdf", featured: true, highlight: "Developing" },
   { title: "Python & Django Framework", org: "Udemy", file: "/certifications/UDEMY/python and django frame worrk and html5 stack completed course.pdf" },
   { title: "Python for Deep Learning & Neural Networks", org: "Udemy", file: "/certifications/UDEMY/python for deep learning build neural networks in python.pdf" },
   { title: "Web & DevOps Certificate", org: "Udemy", file: "/certifications/UDEMY/wed-devops-certificate.pdf" },
@@ -833,7 +835,7 @@ export default function App() {
                   Contact Me
                 </button>
                 <a
-                  href="/resume.pdf"
+                  href="/Bokkena_Harsha_Teja_Resume.pdf"
                   download
                   className="px-8 py-3.5 glass-panel border-blue-500/20 text-blue-400 font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-full hover:bg-blue-500/10 hover:border-blue-500/50 transition-all flex items-center gap-2"
                 >
